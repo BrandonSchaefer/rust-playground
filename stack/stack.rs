@@ -4,6 +4,10 @@ struct Stack {
 }
 
 impl Stack {
+    fn new() -> Stack {
+        Stack { size: 0, data: [0; 10] }
+    }
+
     fn push(&mut self, elem: i32) {
         if self.size < 10 {
             self.data[self.size] = elem;
@@ -44,7 +48,7 @@ impl Stack {
 }
 
 fn main() {
-    let mut stack = Stack { size: 0, data: [0; 10] };
+    let mut stack = Stack::new();
 
     println!("Empty: {}", stack.empty());
     println!("Size: {}", stack.size());
